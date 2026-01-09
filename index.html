@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Operations Portfolio - Kaitlyn King</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0f0f1e;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #60a5fa;
+            border-bottom: 2px solid #60a5fa;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .intro {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #d1d5db;
+        }
+        .project {
+            background-color: #1a1a2e;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 10px;
+            border: 1px solid #374151;
+        }
+        .chart-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .chart-item {
+            text-align: center;
+        }
+        .chart-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid #374151;
+        }
+        .chart-item h3 {
+            color: #60a5fa;
+            margin-top: 15px;
+        }
+        .interactive-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .interactive-link:hover {
+            background-color: #1d4ed8;
+        }
+        .analysis {
+            background-color: #111827;
+            padding: 20px;
+            border-left: 4px solid #60a5fa;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Sports Operations Portfolio</h1>
+    <div class="intro">
+        <p>Aspiring sports operations professional with skills in analytics, strategy, and data-driven decision making</p>
+        <p>By Kaitlyn King</p>
+    </div>
+
+    <div class="project">
+        <h2>About</h2>
+        <p>I'm pursuing a career in sports operations with a focus on leveraging both analytical insights and strategic thinking to support front office decision-making. While I have a strong interest in basketball operations, I'm building a diverse skill set applicable across various sports and operational functions.</p>
+        
+        <p><strong>Core Competencies:</strong> Data analysis, strategic planning, performance evaluation, organizational efficiency</p>
+        
+        <p><strong>Technical Skills:</strong> Python, data visualization, statistical analysis, problem-solving</p>
+        
+        <p><strong>Areas of Interest:</strong> Player personnel, roster management, competitive strategy, organizational development, business operations</p>
+    </div>
+
+    <div class="project">
+        <h2>Project: Marina Mabrey Shooting Analysis (2024-2025)</h2>
+        
+        <p>This analytics project demonstrates my ability to acquire, process, and visualize complex data to generate actionable insights—a key skill for modern sports operations roles. Using shot-by-shot data from the official WNBA Stats API, I analyzed Marina Mabrey's shooting patterns and efficiency across two seasons.</p>
+        
+        <h3>Shooting Efficiency Heat Maps</h3>
+        <p>These hexbin charts visualize shooting efficiency across different court locations. Red zones indicate high shooting percentages (55%+), while blue zones show lower efficiency areas.</p>
+        
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3>2024 Season</h3>
+                <img src="marina_mabrey_2024_polished.png" alt="2024 Efficiency Chart">
+                <br>
+                <a href="marina_mabrey_2024_polished.html" class="interactive-link">View Interactive Chart</a>
+            </div>
+            <div class="chart-item">
+                <h3>2025 Season</h3>
+                <img src="marina_mabrey_2025_polished.png" alt="2025 Efficiency Chart">
+                <br>
+                <a href="marina_mabrey_2025_polished.html" class="interactive-link">View Interactive Chart</a>
+            </div>
+        </div>
+
+        <h3>Shot Distribution Charts</h3>
+        <p>These dot charts show every shot attempt, with green circles representing makes and red X's representing misses.</p>
+        
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3>2024 Season</h3>
+                <img src="marina_mabrey_2024_dots.png" alt="2024 Shot Distribution">
+                <br>
+                <a href="marina_mabrey_2024_dots.html" class="interactive-link">View Interactive Chart</a>
+            </div>
+            <div class="chart-item">
+                <h3>2025 Season</h3>
+                <img src="marina_mabrey_2025_dots.png" alt="2025 Shot Distribution">
+                <br>
+                <a href="marina_mabrey_2025_dots.html" class="interactive-link">View Interactive Chart</a>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h3>Key Insights & Recommendations</h3>
+            <ul>
+                <li><strong>Three-point specialist:</strong> Majority of shot attempts come from beyond the arc, aligning with modern analytics-driven basketball strategy</li>
+                <li><strong>Corner efficiency:</strong> Shows elite shooting percentages from corner three locations—coaches should prioritize getting her these shots</li>
+                <li><strong>Limited mid-range:</strong> Minimal shot attempts from mid-range areas, demonstrating efficient shot selection</li>
+                <li><strong>Rim finishing:</strong> Strong efficiency close to the basket on limited attempts, suggesting value in creating more opportunities near the rim</li>
+                <li><strong>Optimal usage:</strong> Best utilized as a spot-up shooter in corner positions or running off screens for catch-and-shoot opportunities</li>
+            </ul>
+        </div>
+
+        <h3>Methodology</h3>
+        <p><strong>Tools:</strong> Python, Pandas, Plotly, WNBA Stats API</p>
+        <p><strong>Data Source:</strong> Official WNBA shot-by-shot location data for all regular season games</p>
+        <p><strong>Visualization:</strong> Hexbin charts for efficiency analysis, scatter plots for shot distribution with interactive hover functionality</p>
+    </div>
+
+    <footer>
+        <p>Kaitlyn King | Sports Operations Portfolio</p>
+        <p>GitHub: <a href="https://github.com/KaitlynKing" style="color: #60a5fa;">KaitlynKing</a></p>
+    </footer>
+</body>
+</html>
