@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
             background-color: #0f0f1e;
@@ -25,6 +25,10 @@
             padding-bottom: 10px;
             margin-top: 40px;
         }
+        h3 {
+            color: #60a5fa;
+            margin-top: 30px;
+        }
         .intro {
             text-align: center;
             font-size: 1.2em;
@@ -41,34 +45,28 @@
         .chart-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
+            gap: 30px;
+            margin: 30px 0;
         }
-        .chart-item {
-            text-align: center;
-        }
-        .chart-item img {
-            max-width: 100%;
-            height: auto;
+        .chart-wrapper {
+            background-color: #111827;
+            padding: 15px;
             border-radius: 8px;
             border: 2px solid #374151;
         }
-        .chart-item h3 {
+        .chart-wrapper h4 {
             color: #60a5fa;
-            margin-top: 15px;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
-        .interactive-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .interactive-link:hover {
-            background-color: #1d4ed8;
+        iframe {
+            width: 100%;
+            height: 950px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0f0f1e;
         }
         .analysis {
             background-color: #111827;
@@ -76,16 +74,9 @@
             border-left: 4px solid #60a5fa;
             margin: 20px 0;
         }
-
-        /* ✅ NEW: embedded interactive chart styling */
-        .embed {
-            width: 100%;
-            height: 720px;           /* adjust if you want taller/shorter */
-            border: 2px solid #374151;
-            border-radius: 8px;
-            background: #0b1020;
+        .analysis ul {
+            line-height: 1.8;
         }
-
         footer {
             text-align: center;
             margin-top: 60px;
@@ -93,12 +84,16 @@
             border-top: 1px solid #374151;
             color: #9ca3af;
         }
-        @media (max-width: 768px) {
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 1200px) {
             .chart-container {
                 grid-template-columns: 1fr;
-            }
-            .embed {
-                height: 560px;       /* shorter on mobile */
             }
         }
     </style>
@@ -113,76 +108,44 @@
     <div class="project">
         <h2>About</h2>
         <p>I'm pursuing a career in sports operations with a focus on leveraging both analytical insights and strategic thinking to support front office decision-making. While I have a strong interest in basketball operations, I'm building a diverse skill set applicable across various sports and operational functions.</p>
-
+        
         <p><strong>Core Competencies:</strong> Data analysis, strategic planning, performance evaluation, organizational efficiency</p>
-
+        
         <p><strong>Technical Skills:</strong> Python, data visualization, statistical analysis, problem-solving</p>
-
+        
         <p><strong>Areas of Interest:</strong> Player personnel, roster management, competitive strategy, organizational development, business operations</p>
     </div>
 
     <div class="project">
         <h2>Project: Marina Mabrey Shooting Analysis (2024-2025)</h2>
-
-        <p>This analytics project demonstrates my ability to acquire, process, and visualize complex data to generate actionable insights. This is a key skill for modern sports operations roles. Using shot-by-shot data from the official WNBA Stats API, I analyzed Marina Mabrey's shooting patterns and efficiency across two seasons.</p>
-
+        
+        <p>This analytics project demonstrates my ability to acquire, process, and visualize complex data to generate actionable insights—a key skill for modern sports operations roles. Using shot-by-shot data from the official WNBA Stats API, I analyzed Marina Mabrey's shooting patterns and efficiency across two seasons.</p>
+        
         <h3>Shooting Efficiency Heat Maps</h3>
-        <p>These hexbins visualize shot frequency by location (interactive). Hover to explore specific areas.</p>
-
+        <p>These hexbin charts visualize shooting efficiency across different court locations. Red zones indicate high shooting percentages (55%+), while blue zones show lower efficiency areas. Hover over any hexagon to see detailed statistics.</p>
+        
         <div class="chart-container">
-            <div class="chart-item">
-                <h3>2024 Season</h3>
-
-                <!-- ✅ NEW: embed the interactive HTML directly -->
-                <iframe class="embed" src="marina_mabrey_2024_polished.html" title="2024 Interactive Hexbin"></iframe>
-
-                <!-- ✅ Keep a fallback button for full-screen -->
-                <br>
-                <a href="marina_mabrey_2024_polished.html" class="interactive-link">Open Full Screen</a>
+            <div class="chart-wrapper">
+                <h4>2024 Season - Efficiency Map</h4>
+                <iframe src="marina_mabrey_2024_polished.html" scrolling="no"></iframe>
             </div>
-
-            <div class="chart-item">
-                <h3>2025 Season</h3>
-
-                <!-- ✅ NEW: embed the interactive HTML directly -->
-                <iframe class="embed" src="marina_mabrey_2025_polished.html" title="2025 Interactive Hexbin"></iframe>
-
-                <!-- ✅ Keep a fallback button for full-screen -->
-                <br>
-                <a href="marina_mabrey_2025_polished.html" class="interactive-link">Open Full Screen</a>
+            <div class="chart-wrapper">
+                <h4>2025 Season - Efficiency Map</h4>
+                <iframe src="marina_mabrey_2025_polished.html" scrolling="no"></iframe>
             </div>
         </div>
 
         <h3>Shot Distribution Charts</h3>
-        <p>These dot charts show every shot attempt (interactive). Hover to see shot locations.</p>
-
+        <p>These dot charts show every shot attempt, with green circles representing makes and red X's representing misses. Hover over any shot to see the distance and outcome.</p>
+        
         <div class="chart-container">
-            <div class="chart-item">
-                <h3>2024 Season</h3>
-
-                <!-- Option 1: keep PNG preview -->
-                <img src="marina_mabrey_2024_dots.png" alt="2024 Shot Distribution">
-
-                <!-- Option 2 (uncomment to embed instead of PNG):
-                <iframe class="embed" src="marina_mabrey_2024_dots.html" title="2024 Interactive Dots"></iframe>
-                -->
-
-                <br>
-                <a href="marina_mabrey_2024_dots.html" class="interactive-link">Open Interactive</a>
+            <div class="chart-wrapper">
+                <h4>2024 Season - Shot Distribution</h4>
+                <iframe src="marina_mabrey_2024_dots.html" scrolling="no"></iframe>
             </div>
-
-            <div class="chart-item">
-                <h3>2025 Season</h3>
-
-                <!-- Option 1: keep PNG preview -->
-                <img src="marina_mabrey_2025_dots.png" alt="2025 Shot Distribution">
-
-                <!-- Option 2 (uncomment to embed instead of PNG):
-                <iframe class="embed" src="marina_mabrey_2025_dots.html" title="2025 Interactive Dots"></iframe>
-                -->
-
-                <br>
-                <a href="marina_mabrey_2025_dots.html" class="interactive-link">Open Interactive</a>
+            <div class="chart-wrapper">
+                <h4>2025 Season - Shot Distribution</h4>
+                <iframe src="marina_mabrey_2025_dots.html" scrolling="no"></iframe>
             </div>
         </div>
 
@@ -200,13 +163,12 @@
         <h3>Methodology</h3>
         <p><strong>Tools:</strong> Python, Pandas, Plotly, WNBA Stats API</p>
         <p><strong>Data Source:</strong> Official WNBA shot-by-shot location data for all regular season games</p>
-        <p><strong>Visualization:</strong> Hexbin charts and scatter plots with interactive hover functionality</p>
+        <p><strong>Visualization:</strong> Hexbin charts for efficiency analysis, scatter plots for shot distribution with interactive hover functionality</p>
     </div>
 
     <footer>
         <p>Kaitlyn King | Sports Operations Portfolio</p>
-        <p>GitHub: <a href="https://github.com/KaitlynKing" style="color: #60a5fa;">KaitlynKing</a></p>
+        <p>GitHub: <a href="https://github.com/KaitlynKing" target="_blank">KaitlynKing</a></p>
     </footer>
 </body>
 </html>
-
