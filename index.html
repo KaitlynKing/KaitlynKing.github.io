@@ -76,6 +76,16 @@
             border-left: 4px solid #60a5fa;
             margin: 20px 0;
         }
+
+        /* ✅ NEW: embedded interactive chart styling */
+        .embed {
+            width: 100%;
+            height: 720px;           /* adjust if you want taller/shorter */
+            border: 2px solid #374151;
+            border-radius: 8px;
+            background: #0b1020;
+        }
+
         footer {
             text-align: center;
             margin-top: 60px;
@@ -86,6 +96,9 @@
         @media (max-width: 768px) {
             .chart-container {
                 grid-template-columns: 1fr;
+            }
+            .embed {
+                height: 560px;       /* shorter on mobile */
             }
         }
     </style>
@@ -100,52 +113,76 @@
     <div class="project">
         <h2>About</h2>
         <p>I'm pursuing a career in sports operations with a focus on leveraging both analytical insights and strategic thinking to support front office decision-making. While I have a strong interest in basketball operations, I'm building a diverse skill set applicable across various sports and operational functions.</p>
-        
+
         <p><strong>Core Competencies:</strong> Data analysis, strategic planning, performance evaluation, organizational efficiency</p>
-        
+
         <p><strong>Technical Skills:</strong> Python, data visualization, statistical analysis, problem-solving</p>
-        
+
         <p><strong>Areas of Interest:</strong> Player personnel, roster management, competitive strategy, organizational development, business operations</p>
     </div>
 
     <div class="project">
         <h2>Project: Marina Mabrey Shooting Analysis (2024-2025)</h2>
-        
+
         <p>This analytics project demonstrates my ability to acquire, process, and visualize complex data to generate actionable insights. This is a key skill for modern sports operations roles. Using shot-by-shot data from the official WNBA Stats API, I analyzed Marina Mabrey's shooting patterns and efficiency across two seasons.</p>
-        
+
         <h3>Shooting Efficiency Heat Maps</h3>
-        <p>These hexbin charts visualize shooting efficiency across different court locations. Red zones indicate high shooting percentages (55%+), while blue zones show lower efficiency areas.</p>
-        
+        <p>These hexbins visualize shot frequency by location (interactive). Hover to explore specific areas.</p>
+
         <div class="chart-container">
             <div class="chart-item">
                 <h3>2024 Season</h3>
-                <img src="marina_mabrey_2024_polished.png" alt="2024 Efficiency Chart">
+
+                <!-- ✅ NEW: embed the interactive HTML directly -->
+                <iframe class="embed" src="marina_mabrey_2024_polished.html" title="2024 Interactive Hexbin"></iframe>
+
+                <!-- ✅ Keep a fallback button for full-screen -->
                 <br>
-                <a href="marina_mabrey_2024_polished.html" class="interactive-link">View Interactive Chart</a>
+                <a href="marina_mabrey_2024_polished.html" class="interactive-link">Open Full Screen</a>
             </div>
+
             <div class="chart-item">
                 <h3>2025 Season</h3>
-                <img src="marina_mabrey_2025_polished.png" alt="2025 Efficiency Chart">
+
+                <!-- ✅ NEW: embed the interactive HTML directly -->
+                <iframe class="embed" src="marina_mabrey_2025_polished.html" title="2025 Interactive Hexbin"></iframe>
+
+                <!-- ✅ Keep a fallback button for full-screen -->
                 <br>
-                <a href="marina_mabrey_2025_polished.html" class="interactive-link">View Interactive Chart</a>
+                <a href="marina_mabrey_2025_polished.html" class="interactive-link">Open Full Screen</a>
             </div>
         </div>
 
         <h3>Shot Distribution Charts</h3>
-        <p>These dot charts show every shot attempt, with green circles representing makes and red X's representing misses.</p>
-        
+        <p>These dot charts show every shot attempt (interactive). Hover to see shot locations.</p>
+
         <div class="chart-container">
             <div class="chart-item">
                 <h3>2024 Season</h3>
+
+                <!-- Option 1: keep PNG preview -->
                 <img src="marina_mabrey_2024_dots.png" alt="2024 Shot Distribution">
+
+                <!-- Option 2 (uncomment to embed instead of PNG):
+                <iframe class="embed" src="marina_mabrey_2024_dots.html" title="2024 Interactive Dots"></iframe>
+                -->
+
                 <br>
-                <a href="marina_mabrey_2024_dots.html" class="interactive-link">View Interactive Chart</a>
+                <a href="marina_mabrey_2024_dots.html" class="interactive-link">Open Interactive</a>
             </div>
+
             <div class="chart-item">
                 <h3>2025 Season</h3>
+
+                <!-- Option 1: keep PNG preview -->
                 <img src="marina_mabrey_2025_dots.png" alt="2025 Shot Distribution">
+
+                <!-- Option 2 (uncomment to embed instead of PNG):
+                <iframe class="embed" src="marina_mabrey_2025_dots.html" title="2025 Interactive Dots"></iframe>
+                -->
+
                 <br>
-                <a href="marina_mabrey_2025_dots.html" class="interactive-link">View Interactive Chart</a>
+                <a href="marina_mabrey_2025_dots.html" class="interactive-link">Open Interactive</a>
             </div>
         </div>
 
@@ -163,7 +200,7 @@
         <h3>Methodology</h3>
         <p><strong>Tools:</strong> Python, Pandas, Plotly, WNBA Stats API</p>
         <p><strong>Data Source:</strong> Official WNBA shot-by-shot location data for all regular season games</p>
-        <p><strong>Visualization:</strong> Hexbin charts for efficiency analysis, scatter plots for shot distribution with interactive hover functionality</p>
+        <p><strong>Visualization:</strong> Hexbin charts and scatter plots with interactive hover functionality</p>
     </div>
 
     <footer>
@@ -172,3 +209,4 @@
     </footer>
 </body>
 </html>
+
